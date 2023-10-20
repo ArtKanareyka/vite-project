@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import PageWrapper from '../layout/PageWrapper'
 import './style.css'
-import storageList from '../../mocks/storage.js'
+import storageItem from '../../mocks/storage.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <PageWrapper storage={storageList} />
+      <PageWrapper storage={storageItem} />
     </BrowserRouter>
   </React.StrictMode>
 )

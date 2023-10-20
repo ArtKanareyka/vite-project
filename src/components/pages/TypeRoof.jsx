@@ -1,16 +1,14 @@
-import { NavLink } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 // СТРАНИЦА В ВЫБОРОМ КРЫШ
 
-export const TypeRoof = (storageList) => {
+export const TypeRoof = (storageItem) => {
   return (
     <div className="type-roof__wrapper">
       <h1 className="type-roof__title">Выберите тип кровли</h1>
-
       <ul className="type-roof__list">
-        {storageList.storage.map((item) => (
+        {storageItem.storage.map((item) => (
           <li key={item.id} className="type-roof__item">
-            <NavLink to={item.path}>
+            <Link to={item.id + item.path}>
               <button className="type-roof__button" type="button" value="START">
                 <img
                   className="type-roof__image"
@@ -21,7 +19,7 @@ export const TypeRoof = (storageList) => {
                 />
                 {item.typeRoof}
               </button>
-            </NavLink>
+            </Link>
           </li>
         ))}
       </ul>
