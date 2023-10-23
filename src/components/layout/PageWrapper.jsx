@@ -9,21 +9,23 @@ function PageWrapper(storageItem) {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<TypeRoof storage={storageItem.storage} />} />
-        {storageItem.storage.map((element) => {
-          return element.questions.map((item) => (
+        {storageItem.storage.map((storageItem) => {
+          return storageItem.questions.map((questionItem) => (
             <Route
-              path={element.id + item.path}
-              key={item.id}
-              element={<Questions element={element} {...item} />}
+              path={storageItem.id + questionItem.path}
+              key={questionItem.id}
+              element={
+                <Questions storageItem={storageItem} {...questionItem} />
+              }
             />
           ))
         })}
-        {storageItem.storage.map((element) => {
+        {storageItem.storage.map((storageItem) => {
           return (
             <Route
-              path={element.id + 'result'}
-              key={element.id}
-              element={<Result {...element} />}
+              path={storageItem.id + 'result'}
+              key={storageItem.id}
+              element={<Result {...storageItem} />}
             />
           )
         })}

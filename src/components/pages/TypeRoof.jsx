@@ -6,18 +6,18 @@ export const TypeRoof = (storageItem) => {
     <div className="type-roof__wrapper">
       <h1 className="type-roof__title">Выберите тип кровли</h1>
       <ul className="type-roof__list">
-        {storageItem.storage.map((item) => (
-          <li key={item.id} className="type-roof__item">
-            <Link to={item.id + item.path}>
+        {storageItem.storage.map((storageItem) => (
+          <li key={storageItem.id} className="type-roof__item">
+            <Link to={storageItem.id + storageItem.path}>
               <button className="type-roof__button" type="button" value="START">
                 <img
                   className="type-roof__image"
                   width={60}
                   height={60}
-                  src={item.image}
-                  alt={item.alt}
+                  src={storageItem.image}
+                  alt={storageItem.alt}
                 />
-                {item.typeRoof}
+                {storageItem.typeRoof}
               </button>
             </Link>
           </li>
