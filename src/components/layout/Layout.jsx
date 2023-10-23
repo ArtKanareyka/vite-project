@@ -1,13 +1,14 @@
 import { Outlet } from 'react-router-dom'
+import Header from './Header'
+import '../../data/index.css'
 
 const Layout = () => {
   return (
     <>
-      <header>Хедер</header>
+      <Header />
       <main className="layout__wrapper">
         <Outlet />
       </main>
-      <footer>Футер</footer>
     </>
   )
 }
